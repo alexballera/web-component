@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Component</title>
+  </head>
+  <body>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+        <!-- Utilizamos el Custom Element -->
+        <popup-info
+            img="https://1000marcas.net/wp-content/uploads/2020/07/ICBC-logo-600x338.png"
+            text="Hola mundo!!!"
+        >
+        </popup-info>
+
+        <!-- Utilizamos el Custom Element -->
+        <my-paragraph></my-paragraph>
+
+        <!-- Utilizamos el Custom Element usando Template y Slot-->
+
+        <my-paragraph>
+            <span slot="my-text">¡Tengamos un texto diferente!</span>
+        </my-paragraph>
+
+        <!-- Utilizamos el Custom Element usando Template y Slot-->
+        <my-paragraph>
+            <ul slot="my-text">
+                <li>¡Tengamos un texto diferente!</li>
+                <li>¡En una lista!</li>
+            </ul>
+        </my-paragraph>
+        
+        <!-- Establecemos el Template -->
+        <template id="my-paragraph">
+            <style>
+                p {
+                color: white;
+                background-color: #666;
+                padding: 5px;
+                }
+            </style>
+            <p><slot name="my-text">Mi texto predeterminado</slot></p>
+        </template>
+
+    <script src="main.js"></script>
+  </body>
+</html>
